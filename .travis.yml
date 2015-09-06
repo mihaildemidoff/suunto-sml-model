@@ -1,0 +1,12 @@
+language: java
+script: mvn clean package -P strict
+after_success:
+  - mvn jacoco:report coveralls:report
+jdk:
+  - openjdk6
+  - oraclejdk7
+  - oraclejdk8
+branches:
+  only:
+  - master
+sudo: false
